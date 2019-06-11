@@ -20,3 +20,18 @@ data class Movie (
     @ColumnInfo(name = "imdbRating") val imdbRating:String = "N/A",
     @ColumnInfo(name = "Poster") val Poster:String = "N/A"
 )
+
+data class MoviePreview(
+    val Title: String = "N/A",
+    val Year: String = "N/A",
+    val imdbID: String = "N/A",
+    val Type: String = "N/A",
+    val Poster: String = "N/A",
+    var selected: Boolean = false
+)
+
+data class OmbdMovieResponse (
+    val Search: List<MoviePreview>,
+    val totalResults: String,
+    val Response: String
+)
