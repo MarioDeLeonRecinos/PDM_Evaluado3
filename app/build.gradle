@@ -25,6 +25,13 @@ android {
         pickFirst 'META-INF/atomicfu.kotlin_module'
         pickFirst 'META-INF/kotlinx-coroutines-io.kotlin_module'
     }
+    buildTypes.each {
+        Properties properties = new Properties()
+        properties.load(project.rootProject.file("local.properties").newDataInputStream())
+        def ombdApiKey = properties.getProperty("ombd_api_key")
+        it.buildConfigField 'String', "OMBD_API_KEY", ombdApiKey
+        it.resValue 'string', "api_key", ombdApiKey
+    }
 }
 
 dependencies {
