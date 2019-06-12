@@ -36,10 +36,6 @@ android {
 }
 
 dependencies {
-    def room = "2.1.0-beta01"
-    def coroutines = "1.2.0"
-    def archLifecycleVersion = "2.2.0-alpha01"
-    def androidxArchVersion = "2.0.0"
 
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation"org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
@@ -56,22 +52,22 @@ dependencies {
     kapt "com.squareup.moshi:moshi-kotlin-codegen:1.8.0"
 
     /*Room db*/
-    implementation "androidx.room:room-runtime:$room"
-    implementation "androidx.room:room-ktx:$room"
-    kapt "androidx.room:room-compiler:$room"
-    androidTestImplementation "androidx.room:room-testing:$room"
+    implementation "androidx.room:room-runtime:$rootProject.room"
+    implementation "androidx.room:room-ktx:$rootProject.room"
+    kapt "androidx.room:room-compiler:$rootProject.room"
+    androidTestImplementation "androidx.room:room-testing:$rootProject.room"
 
     /*Lifecycle components*/
-    implementation "androidx.lifecycle:lifecycle-extensions:$archLifecycleVersion"
-    kapt "androidx.lifecycle:lifecycle-compiler:$archLifecycleVersion"
-    androidTestImplementation "androidx.arch.core:core-testing:$androidxArchVersion"
+    implementation "androidx.lifecycle:lifecycle-extensions:$rootProject.archLifecycleVersion"
+    kapt "androidx.lifecycle:lifecycle-compiler:$rootProject.archLifecycleVersion"
+    androidTestImplementation "androidx.arch.core:core-testing:$rootProject.androidxArchVersion"
 
     /*ViewModel kotlin support*/
-    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$archLifecycleVersion"
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$rootProject.archLifecycleVersion"
 
     /*Coroutines*/
-    api "org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutines"
-    api "org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutines"
+    api "org.jetbrains.kotlinx:kotlinx-coroutines-core:$rootProject.coroutines"
+    api "org.jetbrains.kotlinx:kotlinx-coroutines-android:$rootProject.coroutines"
 
     /*Design*/
     implementation 'com.android.support:design:28.0.0'
@@ -88,10 +84,4 @@ dependencies {
     implementation 'com.squareup.okhttp3:okhttp:3.12.0'
     implementation 'com.squareup.okhttp3:logging-interceptor:3.12.0'
 
-}
-
-kotlin {
-    experimental {
-        coroutines "enable"
-    }
 }
