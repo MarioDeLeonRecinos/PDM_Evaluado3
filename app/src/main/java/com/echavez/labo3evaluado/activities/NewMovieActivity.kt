@@ -12,10 +12,16 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.echavez.labo3evaluado.AppConstants
 import com.echavez.labo3evaluado.Entities.MoviePreview
-import com.echavez.labo3evaluado.R
 import com.echavez.labo3evaluado.ViewModel.MovieViewModel
 import com.echavez.labo3evaluado.adapters.PreviewAdapter
 import kotlinx.android.synthetic.main.preview_add_movie.*
+import android.net.NetworkInfo
+import android.content.Context.CONNECTIVITY_SERVICE
+import androidx.core.content.ContextCompat.getSystemService
+import android.net.ConnectivityManager
+import android.content.Context
+import com.echavez.labo3evaluado.R
+
 
 class NewMovieActivity:AppCompatActivity() {
 
@@ -70,6 +76,14 @@ class NewMovieActivity:AppCompatActivity() {
 
             setResult(Activity.RESULT_OK)
             finish()
+        }
+
+        val cm = this.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
+
+        val activeNetwork = cm.activeNetworkInfo
+        val isConnected = activeNetwork != null && activeNetwork.isConnectedOrConnecting
+        if (isConnected){
+            Toast.makeText(this,"Lol",Toast.LENGTH_SHORT)
         }
 
     }
