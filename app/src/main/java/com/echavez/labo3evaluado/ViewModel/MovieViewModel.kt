@@ -26,4 +26,8 @@ class MovieViewModel(application: Application): AndroidViewModel(application) {
         repository.insert(movie)
     }
 
+    fun getAll(): LiveData<List<Movie>> = repository.getAllfromMovies()
+
+    fun getMovieByName(name: String): LiveData<List<Movie>> = repository.getMovieByName(name)
+
 }
