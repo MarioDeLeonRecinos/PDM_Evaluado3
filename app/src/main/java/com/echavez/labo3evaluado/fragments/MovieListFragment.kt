@@ -82,27 +82,6 @@ class MovieListFragment: Fragment() {
         }
     }
 
-    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
-        super.onCreateOptionsMenu(menu, inflater)
-        menu.clear()
-        inflater.inflate(R.menu.menu, menu)
-
-        val searchView = menu.findItem(R.id.app_bar_search).actionView as SearchView
-        searchView.isSubmitButtonEnabled = true
-
-        searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
-            override fun onQueryTextSubmit(query: String?): Boolean {
-                return true
-            }
-
-            override fun onQueryTextChange(newText: String?): Boolean {
-                queryToDatabase(newText?: "N/A")
-                return true
-            }
-
-        })
-    }
-
     private fun queryToDatabase(query: String) = movieViewModel.getMovieByName("%$query%").observe(this,
         Observer { queryResult -> moviesAdapter.changeDataSet(queryResult)})
 }

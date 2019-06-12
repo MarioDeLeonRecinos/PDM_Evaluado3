@@ -40,6 +40,7 @@ class MovieViewerFragment: Fragment() {
         view.app_bar_title_viewer.text = data.Title
         view.plot_viewer.text = data.Plot
         view.actors_viewer.text = data.Actors
+        view.director_viewer.text = data.Director
         view.genre_viewer.text = data.Genre
         view.app_bar_rating_viewer.text = data.imdbRating
     }

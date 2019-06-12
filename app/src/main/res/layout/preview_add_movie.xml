@@ -3,17 +3,21 @@
                                                    xmlns:app="http://schemas.android.com/apk/res-auto"
                                                    xmlns:tools="http://schemas.android.com/tools"
                                                    android:layout_width="match_parent"
+                                                   android:background="@color/colorFondo"
                                                    android:layout_height="match_parent">
     <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbarpreview"
             android:background="@color/colorPrimaryDark"
             android:layout_width="match_parent"
+            android:backgroundTint="@color/colorFondo"
             android:layout_height="?attr/actionBarSize" app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
     />
     <EditText android:layout_width="0dp" android:layout_height="0dp" android:id="@+id/et_search"
               android:layout_marginTop="8dp"
+              android:textColor="@color/colorLetras"
+              android:background="@color/colorBtn"
               app:layout_constraintTop_toTopOf="@+id/bt_cancel" app:layout_constraintStart_toStartOf="parent"
               android:layout_marginLeft="16dp" android:layout_marginStart="16dp"
               app:layout_constraintEnd_toStartOf="@+id/bt_cancel" android:layout_marginEnd="8dp"
@@ -31,12 +35,15 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/bt_search"
+            android:background="@color/colorBtn"
+            android:textColor="@color/colorLetras"
             app:layout_constraintEnd_toEndOf="parent"
             android:layout_marginEnd="8dp" android:layout_marginRight="8dp"
             app:layout_constraintTop_toBottomOf="@+id/toolbarpreview"/>
     <androidx.recyclerview.widget.RecyclerView
             android:layout_width="0dp"
             android:layout_height="0dp" android:layout_marginTop="8dp"
+            android:textColor="@color/colorLetras"
             app:layout_constraintTop_toBottomOf="@+id/et_search" app:layout_constraintStart_toStartOf="parent"
             android:layout_marginLeft="8dp" android:layout_marginStart="8dp" app:layout_constraintEnd_toEndOf="parent"
             android:layout_marginEnd="8dp" android:layout_marginRight="8dp" android:layout_marginBottom="8dp"
@@ -44,9 +51,10 @@
     <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textColor="@color/colorLetras"
             android:clickable="true" app:srcCompat="@drawable/add"
             android:id="@+id/bt_add_preview" app:layout_constraintEnd_toEndOf="parent"
             android:layout_marginEnd="8dp" android:layout_marginRight="8dp" android:layout_marginBottom="8dp"
-            app:layout_constraintBottom_toBottomOf="parent" app:backgroundTint="@color/colorPrimary"
+            app:layout_constraintBottom_toBottomOf="parent" app:backgroundTint="@color/colorBtn"
             android:tint="@android:color/background_light"/>
 </androidx.constraintlayout.widget.ConstraintLayout>
