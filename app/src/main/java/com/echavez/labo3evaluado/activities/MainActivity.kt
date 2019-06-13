@@ -2,8 +2,8 @@ package com.echavez.labo3evaluado.activities
 
 import android.content.Intent
 import android.content.res.Configuration
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.echavez.labo3evaluado.AppConstants
 import com.echavez.labo3evaluado.Entities.Movie
@@ -35,7 +35,6 @@ class MainActivity : AppCompatActivity(), MovieListFragment.ClickedMovieListener
             showContent(R.id.land_main_movieviewer_ph, Movie())
             resource =R.id.land_main_place_holder
         }
-
         val intent = Intent(this, NewMovieActivity::class.java)
         main_add_button.setOnClickListener { startActivityForResult(intent , AppConstants.ADD_TASK_REQUEST) }
 

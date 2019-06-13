@@ -11,7 +11,7 @@ import com.echavez.labo3evaluado.R
 import kotlinx.android.synthetic.main.movie_viewer.view.*
 
 
-class MovieViewerFragment: Fragment() {
+class MovieViewerFragment : Fragment() {
 
     var movie = Movie()
 
@@ -31,7 +31,7 @@ class MovieViewerFragment: Fragment() {
         return view
     }
 
-    fun bindData(view: View, data: Movie){
+    fun bindData(view: View, data: Movie) {
         Glide.with(this)
             .load(data.Poster)
             .placeholder(R.drawable.ic_launcher_background)
