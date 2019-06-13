@@ -34,6 +34,8 @@ class MovieAdapter(var movies: List<Movie>, val clickListener: (Movie) -> Unit):
             movie_title_cv.text = movie.Title
             movie_plot_cv.text = movie.Plot
             movie_rate_cv.text = movie.imdbRating
+            movie_year_cv.text = movie.Year
+            movie_genre_cv.text = movie.Genre
             movie_runtime_cv.text = movie.Runtime
             this.setOnClickListener { clickListener(movie) }
         }
