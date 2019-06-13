@@ -1,89 +1,143 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
-                                   xmlns:app="http://schemas.android.com/apk/res-auto"
-                                   android:layout_width="match_parent"
-                                   android:layout_height="wrap_content"
-                                   android:layout_margin="8dp"
-                                   app:cardCornerRadius="15dp"
-                                   app:cardElevation="8dp"
-android:background="@color/colorFondo">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="8dp"
+    android:background="@color/colorFondo"
+    app:cardCornerRadius="15dp"
+    app:cardElevation="8dp">
 
     <RelativeLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-    android:background="@color/colorFondo">
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/colorFondo">
 
         <ImageView
-                android:id="@+id/movie_image_cv"
-                android:layout_width="match_parent"
-                android:layout_height="150dp"
-                android:scaleType="centerCrop"
-                android:src="@drawable/ic_launcher_background" />
+            android:id="@+id/movie_image_cv"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_launcher_background" />
 
         <TextView
-                android:id="@+id/movie_title_cv"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignEnd="@id/movie_image_cv"
-                android:layout_alignRight="@id/movie_image_cv"
-                android:layout_alignBottom="@id/movie_image_cv"
-                android:layout_margin="16dp"
+            android:id="@+id/movie_title_cv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignEnd="@id/movie_image_cv"
+            android:layout_alignRight="@id/movie_image_cv"
+            android:layout_alignBottom="@id/movie_image_cv"
+            android:layout_margin="16dp"
 
-                android:background="#65000000"
-                android:gravity="end"
+            android:background="#65000000"
+            android:gravity="end"
 
-                android:lines="1"
-                android:padding="8dp"
-                android:textColor="@color/colorLetras"
-                android:text="title"
+            android:lines="1"
+            android:padding="8dp"
+            android:text="title"
+            android:textColor="@color/colorLetras"
 
-                android:textSize="25sp" />
+            android:textSize="25sp" />
 
         <TextView
-                android:id="@+id/movie_rate_cv"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignStart="@id/movie_image_cv"
-                android:layout_alignLeft="@id/movie_image_cv"
-                android:layout_alignTop="@id/movie_image_cv"
+            android:id="@+id/movie_rate_cv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@id/movie_image_cv"
+            android:layout_alignLeft="@id/movie_image_cv"
+            android:layout_alignTop="@id/movie_image_cv"
 
-                android:layout_margin="16dp"
-                android:background="#65000000"
+            android:layout_margin="16dp"
+            android:background="#65000000"
 
-                android:gravity="end"
-                android:padding="8dp"
+            android:gravity="end"
+            android:padding="8dp"
 
-                android:text="rate"
-                android:textColor="@color/colorLetras"
+            android:text="rate"
+            android:textColor="@color/colorLetras"
 
-                android:textSize="25sp" />
+            android:textSize="25sp" />
 
         <LinearLayout
-                android:id="@+id/data_container_ll_cv"
+            android:id="@+id/data_container_ll_cv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/movie_image_cv"
+            android:background="@color/colorBtn"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/movie_plot_cv"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/movie_image_cv"
-                android:background="@color/colorBtn"
-                android:orientation="vertical">
+                android:layout_margin="8dp"
+                android:ellipsize="end"
+                android:lines="3"
+                android:text="Lorem blabla"
+                android:textColor="@color/colorLetras" />
 
-            <TextView
-                    android:id="@+id/movie_plot_cv"
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tv_movie_year_released"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="8dp"
-                    android:ellipsize="end"
-                    android:lines="3"
-                    android:textColor="@color/colorLetras"
-                    android:text="Lorem blabla" />
+                    android:gravity="start"
+                    android:text="Year realesed:"
+                    android:textStyle="bold"
+                    android:textColor="@color/colorLetras" />
 
-            <TextView
-                    android:id="@+id/movie_runtime_cv"
+
+                <TextView
+                    android:id="@+id/movie_year_cv"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="8dp"
-                    android:gravity="end"
-                    android:textColor="@color/colorLetras"
-                    android:text="tuntime" />
+                    android:gravity="start"
+                    android:text="tuntime"
+                    android:textColor="@color/colorLetras" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tv_movie_genre"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    android:gravity="start"
+                    android:text="Genre:"
+                    android:textStyle="bold"
+                    android:textColor="@color/colorLetras" />
+
+
+                <TextView
+                    android:id="@+id/movie_genre_cv"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    android:gravity="start"
+                    android:text="tuntime"
+                    android:textColor="@color/colorLetras" />
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/movie_runtime_cv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:gravity="end"
+                android:text="tuntime"
+                android:textColor="@color/colorLetras" />
 
         </LinearLayout>
 
